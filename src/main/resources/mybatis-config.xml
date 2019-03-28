@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--<settings>-->
+        <!--&lt;!&ndash; changes from the defaults &ndash;&gt;-->
+        <!--<setting name="lazyLoadingEnabled" value="false"/>-->
+        <!--&lt;!&ndash; JdbcType enumeration. Most common are: NULL, VARCHAR and OTHER &ndash;&gt;-->
+        <!--<setting name="jdbcTypeForNull" value="NULL"/>-->
+        <!--<setting name="defaultStatementTimeout" value="30"/>-->
+    <!--</settings>-->
+    <!-- 对象实体别名扫描 -->
+    <typeAliases>
+        <typeAlias alias="WordList" type="com.wonhigh.module.WordList" />
+    </typeAliases>
+
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://10.234.6.132:3306/sso"/>
+                <property name="username" value="sso"/>
+                <property name="password" value="sso123"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <!-- map.xml加载 -->
+    <mappers>
+        <mapper resource="mapper/WordListMapper.xml"/>
+    </mappers>
+</configuration>
